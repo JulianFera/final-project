@@ -1,11 +1,14 @@
 import { useContext } from "react";
 import "./Navbar.css";
 import { GlobalContext } from "../../context/GlobalContext";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { MoonOutlined, SunOutlined } from "@ant-design/icons";
 import { Input, Switch } from "antd";
+
 export default function Navbar() {
   const themeContext = useContext(GlobalContext);
+  const currentPath = useLocation();
+
   function onChange(checked: boolean) {
     if (checked) {
       themeContext.setTheme("light");
@@ -66,7 +69,13 @@ export default function Navbar() {
         {navItems.map((item) => {
           return (
             <li>
-              <Link className="link" style={linkStyles} to={item.path}>
+              <Link
+                className={`link ${
+                  item.path === currentPath.pathname ? "active" : ""
+                }`}
+                style={linkStyles}
+                to={item.path}
+              >
                 {item.label}
               </Link>
             </li>
