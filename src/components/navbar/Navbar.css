@@ -3,11 +3,11 @@ nav {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  padding: 12px;
+  padding: 6px;
   height: auto;
 }
 nav img {
-  width: 100px;
+  width: 55px;
 }
 .custom-input {
   width: 300px;
