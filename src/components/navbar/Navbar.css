@@ -5,6 +5,9 @@ nav {
   justify-content: space-around;
   padding: 2px;
   height: auto;
+  position: sticky; /* Make it sticky */
+  top: 0;
+  z-index: 1000;
 }
 
 nav img {
