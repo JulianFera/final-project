@@ -51,11 +51,16 @@ nav ul li {
 
 .link:hover,
 .link:active {
-  border-bottom: 2px solid #888888;
+  border-bottom: 2px solid #1677ff;
 }
 
 /* Switch button icons */
 .switch-icons {
   color: #ffffff;
   font-weight: bolder;
+}
+
+/* icon margin from label */
+span {
+  margin-right: 2px;
 }

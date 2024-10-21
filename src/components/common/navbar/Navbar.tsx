@@ -1,7 +1,12 @@
 import { useContext } from "react";
 import "./Navbar.css";
 import { Link, useLocation } from "react-router-dom";
-import { MoonOutlined, SunOutlined } from "@ant-design/icons";
+import {
+  HeartOutlined,
+  HomeOutlined,
+  MoonOutlined,
+  SunOutlined,
+} from "@ant-design/icons";
 import { Input, Switch } from "antd";
 import { GlobalContext } from "../../../context/GlobalContext";
 
@@ -25,10 +30,12 @@ export default function Navbar() {
     {
       label: "Home",
       path: "/",
+      icon: <HomeOutlined />,
     },
     {
       label: "My Favorites",
       path: "/favorites",
+      icon: <HeartOutlined />,
     },
   ];
   return (
@@ -76,7 +83,7 @@ export default function Navbar() {
                 style={linkStyles}
                 to={item.path}
               >
-                {item.label}
+                <span>{item.icon}</span> {item.label}
               </Link>
             </li>
           );

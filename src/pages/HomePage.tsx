@@ -1,10 +1,10 @@
 import Footer from "../components/common/footer/Footer";
-import Navbar from "../components/common/navbar/Navbar";
 import PopularMovies from "../components/HomePage/popularMovies/PopularMovies";
 import "./PageContainer.css";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import MoviesMenu from "../components/HomePage/moviesMenu/MoviesMenu";
+import Navbar from "../components/common/navbar/Navbar";
 
 export default function HomePage() {
   const themeContext = useContext(GlobalContext);
