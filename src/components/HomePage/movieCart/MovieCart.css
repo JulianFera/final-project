@@ -4,9 +4,15 @@
   transition: transform 0.3s;
   margin: 16px;
 }
+
 .movie-card:hover {
   transform: scale(1.05);
 }
+
 .meta-title {
   text-align: center;
+}
+
+.white-text {
+  color: white; /* Change text color to white */
 }
