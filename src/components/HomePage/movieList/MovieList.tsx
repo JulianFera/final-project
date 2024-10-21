@@ -1,5 +1,5 @@
 import { Pagination } from "antd";
-import useFetch from "../../../hooks/useFetch";
+import useFetch from "../../../hooks/movies-data-hooks/useAllMovieFetch";
 import Error from "../../common/Error";
 import Loading from "../../common/Loading";
 import MovieCard from "../movieCart/MovieCart";

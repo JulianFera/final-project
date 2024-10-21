@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import "./Navbar.css";
-import { GlobalContext } from "../../context/GlobalContext";
 import { Link, useLocation } from "react-router-dom";
 import { MoonOutlined, SunOutlined } from "@ant-design/icons";
 import { Input, Switch } from "antd";
+import { GlobalContext } from "../../../context/GlobalContext";
 
 export default function Navbar() {
   const themeContext = useContext(GlobalContext);

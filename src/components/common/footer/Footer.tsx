@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import { GlobalContext } from "../../context/GlobalContext";
+import { GlobalContext } from "../../../context/GlobalContext";
 import "./Footer.css";
+
 export default function Footer() {
   const themeContext = useContext(GlobalContext);
   return (
@@ -23,7 +24,8 @@ export default function Footer() {
           />
 
           <p>
-            &copy; {new Date().getFullYear()} CinemaVerse. All rights reserved.
+            Copyright &copy; {new Date().getFullYear()} CinemaVerse. All rights
+            reserved.
           </p>
         </div>
       </footer>
