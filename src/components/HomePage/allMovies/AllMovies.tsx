@@ -9,15 +9,18 @@ import useAllMoviesFetch from "../../../hooks/movies-data-hooks/useAllMovieFetch
 export default function AllMovies() {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const { data: allMovies, loading, error } = useAllMoviesFetch(currentPage);
+
   if (loading) {
     return <Loading />;
   }
   if (error) {
     return <Error />;
   }
+
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
+
   return (
     <>
       <div className="movie-card-container">
@@ -34,6 +37,8 @@ export default function AllMovies() {
             />
           );
         })}
+      </div>
+      <div className="pagination">
         <Pagination
           current={currentPage}
           onChange={handlePageChange}
