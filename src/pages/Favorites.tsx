@@ -3,6 +3,7 @@ import Footer from "../components/common/footer/Footer";
 import "./PageContainer.css";
 import { GlobalContext } from "../context/GlobalContext";
 import Navbar from "../components/common/navbar/Navbar";
+import FavoritesList from "../components/Favorites/FavoritesList";
 
 export default function Favorites() {
   const themeContext = useContext(GlobalContext);
@@ -15,7 +16,7 @@ export default function Favorites() {
       }}
     >
       <Navbar />
-      Favorites
+      <FavoritesList />
       <Footer />
     </div>
   );
