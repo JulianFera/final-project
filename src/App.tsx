@@ -18,7 +18,7 @@ function App() {
       element: <HomePage />,
     },
     {
-      path: "/singleMovie",
+      path: "/singleMovie/:id",
       element: <SingleMovie />,
     },
     {
