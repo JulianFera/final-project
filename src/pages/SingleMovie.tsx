@@ -4,7 +4,7 @@ import { GlobalContext } from "../context/GlobalContext";
 import Footer from "../components/common/footer/Footer";
 import Navbar from "../components/common/navbar/Navbar";
 
-export default function SingelMovie() {
+export default function SingleMovie() {
   const themeContext = useContext(GlobalContext);
   return (
     <div
@@ -15,7 +15,7 @@ export default function SingelMovie() {
       }}
     >
       <Navbar />
-      <div>SingeMovie</div>
+      Single Movie
       <Footer />
     </div>
   );
