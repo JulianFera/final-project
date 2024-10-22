@@ -5,6 +5,7 @@ import SingelMovie from "./pages/SingelMovie";
 import { useState } from "react";
 import { GlobalContext } from "./context/GlobalContext";
 import { ThemeType } from "./types";
+import { FloatButton } from "antd";
 
 function App() {
   const defaultTheme: ThemeType = localStorage.getItem("theme")
@@ -29,6 +30,7 @@ function App() {
     <>
       <GlobalContext.Provider value={{ theme, setTheme }}>
         <RouterProvider router={router} />
+        <FloatButton.BackTop />
       </GlobalContext.Provider>
     </>
   );
