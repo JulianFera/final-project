@@ -4,10 +4,12 @@ import { AllMoviesType } from "../../../types";
 import { GlobalContext } from "../../../context/GlobalContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import useMovieNavigation from "../../../hooks/useMovieNavigation";
 
 const { Meta } = Card;
 
 export default function MovieCard(props: AllMoviesType) {
+  const handleNavigateClick = useMovieNavigation(props.id);
   const themeContext = useContext(GlobalContext);
   const rating = props.vote_average / 2;
   const content = (
@@ -22,6 +24,7 @@ export default function MovieCard(props: AllMoviesType) {
     <Link to={"/singleMovie"}>
       <Popover placement="leftTop" content={content}>
         <Card
+          onClick={handleNavigateClick}
           className="movie-card"
           style={{
             backgroundColor:
@@ -34,8 +37,12 @@ export default function MovieCard(props: AllMoviesType) {
           hoverable
           cover={
             <img
-              alt="Movie Image"
-              src={`https://image.tmdb.org/t/p/w500${props.poster_path}`}
+              alt={props.title}
+              src={
+                props.poster_path
+                  ? `https://image.tmdb.org/t/p/w500${props.poster_path}`
+                  : "/filler-image.jpg"
+              }
               className="movie-card-image"
             />
           }
@@ -52,7 +59,13 @@ export default function MovieCard(props: AllMoviesType) {
               </span>
             }
             // description={
-            //   <span>{props.genre_ids}</span>
+            //   <span
+            //     style={{
+            //       color: themeContext.theme === "dark" ? "white" : "black",
+            //     }}
+            //   >
+            //     {props.genre_ids}
+            //   </span>
             // }
           />
         </Card>
