@@ -1,3 +1,4 @@
+/* Navbar */
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -5,7 +6,7 @@ nav {
   justify-content: space-around;
   padding: 2px;
   height: auto;
-  position: sticky; /* Make it sticky on top*/
+  position: sticky; /* Make it sticky on top */
   top: 0;
   z-index: 1000;
 }
@@ -19,6 +20,7 @@ nav img:hover {
   transform: scale(1.15);
 }
 
+/* Search Input */
 .custom-input {
   width: 300px;
   height: 40px;
@@ -31,6 +33,7 @@ nav img:hover {
   height: 26px;
 }
 
+/* Home/Favorites */
 nav ul {
   list-style-type: none;
   display: flex;
@@ -50,7 +53,7 @@ nav ul li {
 }
 
 .link-home:hover,
-.link-home:active {
+.link-home.active {
   border-bottom: 2px solid #1677ff;
 }
 
@@ -63,4 +66,45 @@ nav ul li {
 /* icon margin from label */
 span {
   margin-right: 2px;
+}
+
+/* Responsive Styles */
+.mobile-menu-icon {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-icon {
+    display: block; /* Show hamburger icon on small screens */
+    font-size: 23px;
+  }
+
+  nav ul {
+    width: 200px;
+    height: 220px;
+    flex-direction: column;
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 60px; /* Adjust based on your navbar height */
+    left: 10;
+    right: 0;
+    background-color: inherit;
+    padding: 10px;
+    z-index: 999; /* Ensure it's above other content */
+  }
+
+  nav ul.open {
+    display: flex; /* Show when open */
+  }
+
+  nav ul li {
+    margin: 10px 0; /* Spacing between items */
+    text-align: center;
+  }
+
+  .custom-input {
+    width: 200px;
+    height: 37px;
+  }
 }

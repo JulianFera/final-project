@@ -24,7 +24,7 @@ export type SingleMovieType = {
   id: number;
   title: string;
   backdrop_path: string;
-  genres: GenreType[]; // Change to an array of GenreType
+  genres: GenreType[];
   origin_country: string[];
   overview: string;
   status: string;
